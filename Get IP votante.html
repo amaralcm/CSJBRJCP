@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>CSJB RJCP</title>
+		
+    </head>
+    <body>
+        <div class="container">
+		  <div id="IP">IP Address should show here.</div>
+		  <script>
+			fetch('https://jsonip.com/?')
+			  .then(function(response) {
+				return response.json();
+			  })
+			  .then(function(myJson) {
+				document.getElementById('IP').innerHTML = JSON.stringify(myJson.ip);
+			  });
+		  </script>
+		</div>
+    </body>
+</html>
