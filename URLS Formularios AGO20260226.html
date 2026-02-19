@@ -1,60 +1,218 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botões com Links</title>
+    <title>AGO 2026 - Condomínio CSJBRJCP</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        :root {
+            --verde-escuro: #1b4332; 
+            --verde-presenca: #081c15;
+            --verde-hover: #2d6a4f;
+            --cinza-fechado: #94a3b8;
+            --bg-site: #f4f4f4;
+            --white: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-site);
+            margin: 0;
             padding: 20px;
-            text-align: center;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #556b2f;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-         .content {
-           
+            display: flex;
             justify-content: center;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            min-height: 100vh;
         }
-		.icon {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
+
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: var(--white);
+            padding: 30px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .logo-container {
+            margin-bottom: 15px;
+        }
+        
+        .logo-img {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .header-info {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--verde-escuro);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .badge {
+            background: #e2e8f0;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: #4a5568;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            color: #1a202c;
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background-color: var(--verde-escuro);
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease-in-out;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--verde-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(27, 67, 50, 0.2);
+        }
+
+        .btn-presenca {
+            background-color: var(--verde-presenca);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Estilo para Botão Encerrado (Status 0) */
+        .btn.fechado {
+            background-color: var(--cinza-fechado) !important;
+            pointer-events: none;
+            opacity: 0.7;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .material-icons {
+            font-size: 20px;
+        }
+
+        footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #edf2f7;
+            font-size: 0.85rem;
+            color: #718096;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <img src="Logotipo CSJBRJCP.png" width="10%"><br/>
-        <h1>Formulários para Registo e Votação<br/>Assembleia Geral Ordinária de Condóminos CONDOMÍNIO COLINA S. JOÃO BRITO 2026</h1>
-        <a href="https://forms.gle/fphRzfa4ek8sXHqv9" class="button" target="_blank">Registe a sua Presença na Assembleia Geral 2026.02.26</a><br/><br/><br/>
-        <a href="https://forms.gle/Htq6fBgZvsPzndQd9" class="button" target="_blank">1. Apresentação, discussão e aprovação por votação das contas do Exercício de 2025</a><br/><br/>
-        <a href="https://forms.gle/dcrifz5QASxQVCy19" class="button" target="_blank">3. Eleição da empresa responsável pela Gestão do Condomínio para o Exercício de 2026</a><br/><br/>
-		<a href="https://forms.gle/sCwAiuw1ejhuAD9P7" class="button" target="_blank">4.	Nomeação da administração do Condomínio para o Ano de 2026</a><br/><br/>
-        <a href="https://forms.gle/ap9tZVHkodEB4yRY8" class="button" target="_blank">5. Autorização e movimentação das contas bancárias do Condomínio</a><br/><br/>
-		<a href="https://forms.gle/PLn1PrtCnfWPGVj66" class="button" target="_blank">7.	Deliberação sobre a quota extraordinária destinada à execução de obras</a><br/><br/>
-        <a href="https://forms.gle/KaUPsccCX2DfzT5e9" class="button" target="_blank">8. Apresentação, discussão e votação do Orçamento para 2026</a>
+
+<div class="card">
+    <div class="logo-container">
+        <img src="Logotipo CSJBRJCP.png" alt="Logótipo Condomínio" class="logo-img" onerror="this.style.display='none'">
+        <div class="header-info">
+            Condomínio Rua José Cardoso Pires Nº 1 a 9
+        </div>
     </div>
-	<div class="icon">
-		<a href="https://www.loom.com/embed/8bd132080f514c69bdf6b98c30f555b9?sid=2a799296-4895-4dd6-83ca-684ac2b7af1a" target="_blank">
-		<img src="pngwing.png" width="2%">
-		</a>
-	</div>
+    
+    <div class="badge">2026.02.26</div>
+    
+    <h1>Assembleia Geral Ordinária</h1>
+    
+    <div class="btn-container">
+        <a href="https://forms.gle/fphRzfa4ek8sXHqv9" id="btn-presenca" class="btn btn-presenca" target="_blank">
+            <span class="material-icons">how_to_reg</span> Registe a sua Presença
+        </a>
+
+        <p class="subtitle">Selecione o ponto para votar:</p>
+
+        <a href="https://forms.gle/Htq6fBgZvsPzndQd9" id="btn-ponto1" class="btn" target="_blank"><span class="material-icons">analytics</span> 1. Votação: Contas 2025</a>
+        <a href="https://forms.gle/dcrifz5QASxQVCy19" id="btn-ponto3" class="btn" target="_blank"><span class="material-icons">business_center</span> 3. Eleição: Gestão 2026</a>
+        <a href="https://forms.gle/sCwAiuw1ejhuAD9P7" id="btn-ponto4" class="btn" target="_blank"><span class="material-icons">groups</span> 4. Nomeação: Administração 2026</a>
+        <a href="https://forms.gle/ap9tZVHkodEB4yRY8" id="btn-ponto5" class="btn" target="_blank"><span class="material-icons">account_balance</span> 5. Movimentação Bancária</a>
+        <a href="https://forms.gle/PLn1PrtCnfWPGVj66" id="btn-ponto7" class="btn" target="_blank"><span class="material-icons">construction</span> 7. Quota Extraordinária</a>
+        <a href="https://forms.gle/KaUPsccCX2DfzT5e9" id="btn-ponto8" class="btn" target="_blank"><span class="material-icons">payments</span> 8. Votação: Orçamento 2026</a>
+    </div>
+
+    <footer>
+        <p>Identifique-se com a sua <strong>Fracção</strong>.<br>
+        Apenas um voto por unidade é contabilizado.<br><br>
+        © 2026 Administração CSJBRJCP</p>
+    </footer>
+</div>
+
+<script>
+    async function verificarStatus() {
+        try {
+            // Fetch do JSON com timestamp para evitar cache
+            const resposta = await fetch('Formularios AGO20260226 votos.json?t=' + new Date().getTime());
+            const status = await resposta.json();
+
+            // Mapeia os IDs do HTML para as chaves do JSON
+            const mapaBotoes = {
+                'btn-presenca': status.presenca,
+                'btn-ponto1': status.ponto1,
+                'btn-ponto3': status.ponto3,
+                'btn-ponto4': status.ponto4,
+                'btn-ponto5': status.ponto5,
+                'btn-ponto7': status.ponto7,
+                'btn-ponto8': status.ponto8
+            };
+
+            for (let id in mapaBotoes) {
+                const elemento = document.getElementById(id);
+                if (elemento) {
+                    if (mapaBotoes[id] === 0) {
+                        elemento.classList.add('fechado');
+                    } else {
+                        elemento.classList.remove('fechado');
+                    }
+                }
+            }
+        } catch (erro) {
+            console.error("Erro ao carregar status dos votos:", erro);
+        }
+    }
+
+    // Executa ao carregar e a cada 10 segundos
+    verificarStatus();
+    setInterval(verificarStatus, 10000);
+</script>
+
 </body>
 </html>
