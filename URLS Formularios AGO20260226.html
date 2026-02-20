@@ -6,156 +6,168 @@
     <title>AGO 2026 - Condomínio CSJBRJCP</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+		   
+										   
+								
+	
+														 
+							 
+	
+											   
+						   
+	
+							 
+					 
+ 
+
         :root {
-            --verde-escuro: #1b4332; 
-            --verde-presenca: #081c15;
-            --verde-hover: #2d6a4f;
+            /* Cores baseadas no seu logótipo */
+            --verde-botoes: #2d6a4f;    /* O verde mais claro que pediu */
+            --laranja-presenca: #f39c12; /* Laranja do logo para destaque */
+            --azul-claro-bg: #f0f7ff;    /* Azul muito clarinho para o fundo */
+            --verde-hover: #40916c;
             --cinza-fechado: #94a3b8;
-            --bg-site: #f4f4f4;
             --white: #ffffff;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-site);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
+            background-color: var(--azul-claro-bg);
+            margin: 0; padding: 20px;
+            display: flex; justify-content: center; min-height: 100vh;
         }
 
         .card {
-            max-width: 500px;
-            width: 100%;
-            background: var(--white);
-            padding: 30px 25px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            box-sizing: border-box;
+            max-width: 500px; width: 100%;
+						
+            background: var(--white); padding: 30px 25px;
+							   
+								
+            border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+							   
+            text-align: center; box-sizing: border-box;
         }
 
-        .logo-container {
-            margin-bottom: 15px;
-        }
-        
-        .logo-img {
-            max-width: 120px;
-            height: auto;
-            margin-bottom: 10px;
-        }
+        .logo-img { max-width: 140px; height: auto; margin-bottom: 10px; }
+								
+		 
+		
+				   
+							 
+						 
+								
+		 
 
         .header-info {
-            font-size: 0.95rem;
-            font-weight: bold;
-            color: var(--verde-escuro);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            line-height: 1.4;
+            font-size: 0.95rem; font-weight: bold; color: #2c3e50;
+							  
+									   
+								
+            margin-bottom: 12px; text-transform: uppercase; line-height: 1.4;
+							 
         }
 
         .badge {
-            background: #e2e8f0;
-            padding: 6px 16px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            color: #4a5568;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: 700;
+            background: #e2e8f0; padding: 6px 16px; border-radius: 6px;
+							  
+							   
+							   
+						   
+            font-size: 0.75rem; color: #4a5568; display: inline-block;
+            margin-bottom: 20px; font-weight: 700;
+							 
         }
 
-        h1 {
-            font-size: 1.4rem;
-            color: #1a202c;
-            margin: 0 0 20px 0;
-            line-height: 1.2;
-        }
+        h1 { font-size: 1.4rem; color: #1a202c; margin-bottom: 20px; }
+							  
+						   
+							   
+							 
+		 
 
-        .subtitle {
-            color: #718096;
-            font-size: 0.9rem;
-            margin: 10px 0;
-            font-weight: 600;
-        }
+        .subtitle { color: #718096; font-size: 0.9rem; margin: 10px 0; font-weight: 600; }
+						   
+							  
+						   
+							 
+		 
 
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-        }
+        .btn-container { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+						  
+								   
+					  
+						
+		 
 
+        /* Estilo base do botão */
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            background-color: var(--verde-escuro);
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease-in-out;
-            box-sizing: border-box;
-            border: none;
+						  
+								
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+					  
+						
+            width: 100%; background-color: var(--verde-botoes); color: white;
+						 
+            text-decoration: none; padding: 16px; border-radius: 10px;
+						  
+								
+							 
+							   
+            font-weight: 600; font-size: 0.95rem; transition: all 0.2s;
+            box-sizing: border-box; border: none; cursor: pointer;
+						 
         }
 
-        .btn:hover {
-            background-color: var(--verde-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(27, 67, 50, 0.2);
-        }
+        /* Cor especial para Presença (Laranja) */
+        .btn-laranja { background-color: var(--laranja-presenca) !important; }
+        .btn-laranja:hover { background-color: #e67e22 !important; }
+														 
+		 
 
-        .btn-presenca {
-            background-color: var(--verde-presenca);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
+					   
+        .btn:hover { background-color: var(--verde-hover); transform: translateY(-2px); }
+													
+		 
 
-        /* Estilo para Botão Encerrado (Status 0) */
+        /* Estilo para Botão Fechado */
         .btn.fechado {
             background-color: var(--cinza-fechado) !important;
             pointer-events: none;
-            opacity: 0.7;
-            box-shadow: none;
-            transform: none;
+            opacity: 0.6;
+							 
+							
         }
 
-        .material-icons {
-            font-size: 20px;
-        }
+        .material-icons { font-size: 20px; }
+							
+		 
 
-        footer {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 1px solid #edf2f7;
-            font-size: 0.85rem;
-            color: #718096;
-            line-height: 1.6;
-        }
+        footer { margin-top: 35px; padding-top: 20px; border-top: 1px solid #edf2f7; font-size: 0.85rem; color: #718096; }
+							 
+							  
+										  
+							   
+						   
+							 
+		 
     </style>
 </head>
 <body>
 
 <div class="card">
     <div class="logo-container">
-        <img src="Logotipo CSJBRJCP.png" alt="Logótipo Condomínio" class="logo-img" onerror="this.style.display='none'">
-        <div class="header-info">
-            Condomínio Rua José Cardoso Pires Nº 1 a 9
-        </div>
+        <img src="Logotipo CSJBRJCP.png" alt="Logótipo" class="logo-img" onerror="this.style.display='none'">
+								 
+        <div class="header-info">Condomínio Rua José Cardoso Pires Nº 1 a 9</div>
+			  
     </div>
     
     <div class="badge">2026.02.26</div>
-    
+	
     <h1>Assembleia Geral Ordinária</h1>
     
     <div class="btn-container">
-        <a href="https://forms.gle/fphRzfa4ek8sXHqv9" id="btn-presenca" class="btn btn-presenca" target="_blank">
+        <a href="https://forms.gle/fphRzfa4ek8sXHqv9" id="btn-presenca" class="btn btn-laranja" target="_blank">
             <span class="material-icons">how_to_reg</span> Registe a sua Presença
         </a>
 
@@ -179,11 +191,13 @@
 <script>
     async function verificarStatus() {
         try {
-            // Fetch do JSON com timestamp para evitar cache
+															
             const resposta = await fetch('Formularios AGO20260226 votos.json?t=' + new Date().getTime());
+            if (!resposta.ok) throw new Error('Não foi possível ler o ficheiro');
+            
             const status = await resposta.json();
 
-            // Mapeia os IDs do HTML para as chaves do JSON
+														   
             const mapaBotoes = {
                 'btn-presenca': status.presenca,
                 'btn-ponto1': status.ponto1,
@@ -205,15 +219,15 @@
                 }
             }
         } catch (erro) {
-            console.error("Erro ao carregar status dos votos:", erro);
+            // Se houver erro, os botões permanecem visíveis e ativos por segurança
+            console.log("A aguardar ligação com votos.json...");
         }
     }
 
-    // Executa ao carregar e a cada 30 segundos
+											   
     verificarStatus();
     setInterval(verificarStatus, 30000);
 </script>
 
 </body>
 </html>
-
