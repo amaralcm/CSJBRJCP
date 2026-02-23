@@ -1,13 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-pt">
 <head>
-    <meta charset="utf-8"/>
-    <title>Reunião de condomínio Colina S. João de Brito 2026</title>
-  <!--   <meta http-equiv="refresh" content="5; URL='https://meet.google.com/epq-zfnq-fry'"/>-->
-   <!--   <meta http-equiv="refresh" content="5; URL='https://drive.google.com/file/d/1QA--1m-jIMerXD6GAVw3ESMALdq5QZey'"/>-->
-<meta http-equiv="refresh" content="5; URL='https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/uc?id=1QA--1m-jIMerXD6GAVw3ESMALdq5QZey'"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso à Assembleia Geral - AGO 2026</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #f0f2f5;    /* Cinza muito claro para o fundo */
+            --card: #ffffff;       /* Fundo do Cartão Branco */
+            --text-dark: #2d3748;  /* Texto Escuro */
+            --green: #48bb78;      /* Verde (Ação) */
+            --orange: #ed8936;     /* Laranja (Destaque) */
+            --border: #e2e8f0;     /* Cor das bordas */
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-body); 
+            color: var(--text-dark);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .panel { 
+            width: 90%;
+            max-width: 420px; 
+            background: var(--card); 
+            padding: 40px 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 6px solid var(--orange); /* Barra laranja no topo como no Google Forms */
+        }
+
+        /* Estilo para o Logótipo */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo-container img {
+            max-width: 180px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+        }
+
+        h2 { 
+            margin: 0 0 15px 0; 
+            font-size: 1.5rem; 
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .btn-entrar { 
+            background-color: var(--green); 
+            color: white; 
+            border: none; 
+            padding: 16px 20px; 
+            font-size: 1.1rem; 
+            font-weight: bold; 
+            border-radius: 8px; 
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-entrar:hover { 
+            background-color: #38a169; 
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .btn-entrar:active {
+            transform: translateY(0);
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        
+        .destaque-laranja {
+            color: var(--orange);
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<center><h1>Aguarde....<br><br>Em breve será redirecionado para a Reunião de condomínio Colina S. João de Brito 2026</h1></center>
+
+<div class="panel">
+    <div class="logo-container">
+        <img src="Logotipo CSJBRJCP.png" alt="Logótipo Condomínio">
+    </div>
+
+    <h2>Assembleia Geral Ordinária 2026</h2>
+    
+    <p>
+        Bem-vindo. Clique no botão abaixo para aceder à videoconferência e abrir o <span class="destaque-laranja">Painel de Votos</span>.
+    </p>
+    
+    <button onclick="entrarAssembleia()" class="btn-entrar">
+        <span class="material-icons">videocam</span> 
+        ENTRAR NA REUNIÃO
+    </button>
+    
+    <div class="footer">
+        <b>Condomínio José Cardoso Pires</b><br>
+        Assembleia Geral Ordinária
+    </div>
+</div>
+
+<script>
+    function entrarAssembleia() {
+        // Dimensões da janela de votos (estilo telemóvel lateral)
+        const largura = 550;
+        const altura = 1000;
+        
+        const esquerda = (window.screen.width / 2) - (largura / 2);
+        const topo = (window.screen.height / 2) - (altura / 2);
+
+        // 1. Abrir Votações (Janela independente)
+        window.open(
+            "https://links.cond-josecardosopires.pt/FormulariosAG2026", 
+            "PainelVotacao", 
+            `width=${largura},height=${altura},top=${topo},left=${esquerda},location=yes,toolbar=yes,menubar=yes,resizable=yes,scrollbars=yes`
+        );
+
+        // 2. Redirecionar esta página para o Google Meet
+        setTimeout(function(){
+            //window.location.href = "https://meet.google.com/epq-zfnq-fry";
+			window.location.href = "https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/uc?id=1QA--1m-jIMerXD6GAVw3ESMALdq5QZey";
+        }, 300);
+    }
+</script>
+
 </body>
 </html>
