@@ -118,7 +118,7 @@
     async function verificarStatus() {
         try {
 															
-            const resposta = await fetch('Formularios AGO20260226 votos.json?t=' + new Date().getTime());
+            const resposta = await fetch('Formularios_AGO20260226_votos.json?t=' + new Date().getTime());
             if (!resposta.ok) throw new Error('Não foi possível ler o ficheiro');
             
             const status = await resposta.json();
@@ -157,3 +157,4 @@
 
 </body>
 </html>
+
