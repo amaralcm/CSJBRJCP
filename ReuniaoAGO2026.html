@@ -12,6 +12,7 @@
             --text-dark: #2d3748;
             --green: #48bb78;   
             --orange: #ed8936;  
+            --blue-docs: #4a5568; 
             --disabled: #cbd5e0;
             --border: #e2e8f0;
         }
@@ -19,7 +20,8 @@
         body { 
             font-family: 'Segoe UI', system-ui, sans-serif; 
             background-color: var(--bg-body); 
-            margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh;
+            margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh;
+            padding: 20px 0;
         }
 
         .panel { 
@@ -29,7 +31,6 @@
             transition: all 0.5s ease;
         }
 
-        /* Quando a entrada está ativa, a barra fica laranja */
         .panel.ativa { border-top-color: var(--orange); }
 
         .logo-container { margin-bottom: 25px; }
@@ -38,22 +39,30 @@
         h2 { margin: 0 0 10px 0; font-size: 1.4rem; color: var(--text-dark); }
         #status-msg { font-size: 1rem; margin-bottom: 25px; font-weight: 500; color: #718096; }
 
-        /* Container que esconde/mostra os botões */
         #botoes-container { display: none; } 
 
         .btn { 
             display: flex; align-items: center; justify-content: center; gap: 12px;
             width: 100%; height: 58px; margin-bottom: 15px; border-radius: 8px;
-            font-size: 1rem; font-weight: bold; color: white !important;
+            font-size: 0.95rem; font-weight: bold; color: white !important;
             text-decoration: none !important; box-sizing: border-box;
             transition: all 0.2s;
         }
 
+        .btn-votos { background-color: var(--orange); }
+        .btn-votos:hover { background-color: #dd6b20; transform: translateY(-2px); }
+
         .btn-meet { background-color: var(--green); }
         .btn-meet:hover { background-color: #38a169; transform: translateY(-2px); }
 
-        .btn-votos { background-color: var(--orange); }
-        .btn-votos:hover { background-color: #dd6b20; transform: translateY(-2px); }
+        .btn-doc { background-color: var(--blue-docs); }
+        .btn-doc:hover { background-color: #2d3748; transform: translateY(-2px); }
+
+        .docs-section {
+            margin-top: 10px;
+            padding-top: 25px;
+            border-top: 2px dashed var(--border);
+        }
 
         .footer { margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.8rem; color: #718096; }
     </style>
@@ -69,15 +78,31 @@
     <p id="status-msg">A verificar estado do acesso...</p>
     
     <div id="botoes-container">
-	 <a href="https://links.cond-josecardosopires.pt/FormulariosAG2026" target="_blank" class="btn btn-votos">
-            <span class="material-icons">ballot</span> 2. ACEDER AOS VOTOS
+        <a href="https://links.cond-josecardosopires.pt/FormulariosAG2026" target="_blank" class="btn btn-votos">
+            <span class="material-icons">ballot</span> ACEDER AOS VOTOS
         </a>
-		
+        
         <a href="https://meet.google.com/epq-zfnq-fry" target="_blank" class="btn btn-meet">
-            <span class="material-icons">videocam</span> 1. ENTRAR NA REUNIÃO (VÍDEO)
+            <span class="material-icons">videocam</span> ENTRAR NA REUNIÃO (VÍDEO)
+        </a>
+    </div>
+
+    <div class="docs-section">
+        <a href="https://drive.google.com/file/d/13OFqav-TspKlZMJXqeyd34iRn33NuOGo/preview" target="_blank" class="btn btn-doc">
+            <span class="material-icons">gavel</span> CONVOCATÓRIA
         </a>
 
-       
+        <a href="https://links.cond-josecardosopires.pt/RJCP-EXERC2025" target="_blank" class="btn btn-doc">
+            <span class="material-icons">description</span> RELATÓRIO DE CONTAS E PROPOSTA
+        </a>
+
+        <a href="https://links.cond-josecardosopires.pt/RJCP-MANUAL-OCORRENCIAS" target="_blank" class="btn btn-doc">
+            <span class="material-icons">help_outline</span> MANUAL DE OCORRÊNCIAS
+        </a>
+
+        <a href="https://links.cond-josecardosopires.pt/RJCP-VE" target="_blank" class="btn btn-doc">
+            <span class="material-icons">ev_station</span> MANUAL VEÍCULOS ELÉTRICOS
+        </a>
     </div>
     
     <div class="footer">
@@ -93,28 +118,25 @@
         const panel = document.getElementById('main-panel');
 
         try {
-            // Lê o ficheiro JSON
-            const resposta = await fetch('Formularios AGO20260226 votos.json?t=' + Date.now());
+            const resposta = await fetch('Formularios_AGO20260226_votos.json?t=' + Date.now());
             const dados = await resposta.json();
 
-            // Verifica a nova chave "entrada"
             if (dados.entrada === 1) {
-                msg.innerHTML = "O acesso está <b style='color:#48bb78'>Aberto</b>.<br>Seja bem-vindo!<p>Clique nos botões abaixo para participar na reunião e aceder à votação:</p>";
-                container.style.display = 'block'; // Mostra os botões
+                msg.innerHTML = "O acesso está <b style='color:#48bb78'>Aberto</b>.<br>Seja bem-vindo!";
+                container.style.display = 'block';
                 panel.classList.add('ativa');
             } else {
                 msg.innerHTML = "O acesso à Assembleia encontra-se <b style='color:#e53e3e'>Fechado</b>.<br>Aguarde pelo início da sessão.";
-                container.style.display = 'none'; // Esconde os botões
+                container.style.display = 'none';
                 panel.classList.remove('ativa');
             }
         } catch (erro) {
             msg.innerText = "Erro ao carregar ficheiro de controlo.";
-			container.style.display = 'block'; // Mostra os botões
+            container.style.display = 'block'; 
             panel.classList.add('ativa');
         }
     }
 
-    // Verifica ao carregar e a cada 15 segundos
     verificarEntrada();
     setInterval(verificarEntrada, 15000);
 </script>
